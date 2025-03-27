@@ -1,0 +1,30 @@
+# This workflow creates a static website using AWS S3
+name: AWS example workflow
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  BUCKET_NAME: "bunny2.0"  # Change bucket name
+  AWS_REGION: "ap-south-1"  # AWS region
+
+permissions:
+  id-token: write  # This is required for requesting the JWT
+  contents: read  # This is required for actions/checkout
+
+jobs:
+  S3PackageUpload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::476114119733:role/bunny
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Copy index.html to S3
+        run: |
