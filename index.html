@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doggy Style Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+        .logo {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background: #654321;
+            border-radius: 50%;
+        }
+        .ear {
+            position: absolute;
+            width: 50px;
+            height: 80px;
+            background: #654321;
+            border-radius: 50%;
+            top: -20px;
+        }
+        .ear.left {
+            left: -20px;
+            transform: rotate(-30deg);
+        }
+        .ear.right {
+            right: -20px;
+            transform: rotate(30deg);
+        }
+        .eye {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: black;
+            border-radius: 50%;
+            top: 50px;
+        }
+        .eye.left {
+            left: 40px;
+        }
+        .eye.right {
+            right: 40px;
+        }
+        .nose {
+            position: absolute;
+            width: 20px;
+            height: 15px;
+            background: black;
+            border-radius: 50%;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="nose"></div>
+    </div>
+</body>
+</html>
